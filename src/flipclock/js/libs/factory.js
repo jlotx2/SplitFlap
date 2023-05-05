@@ -144,6 +144,12 @@
 		running: false,
 		
 		/**
+		 * The FlipClock.displayChar object
+		 */		
+		 
+		displayChar: false,
+
+		/**
 		 * The FlipClock.Time object
 		 */		
 		 
@@ -348,6 +354,15 @@
 			this.time.time = time;
 			this.flip(true);		
 		},
+
+		/**
+		 * Sets the display value
+		 */
+		 
+		setDisplayChar: function(displayChar) {
+			this.displayChar = displayChar[0];  // make it a string of one character
+			this.flip(true);		
+		},
 		
 		/**
 		 * Get the clock time
@@ -358,7 +373,16 @@
 		getTime: function(time) {
 			return this.time;		
 		},
+
+		/**
+		 * Get the displayChar
+		 *
+		 * @return  object  Returns a string
+		 */
 		
+		getDisplayChar: function(displayChar) {
+			return this.displayChar;		
+		},		
 		/**
 		 * Changes the increment of time to up or down (add/sub)
 		 */
